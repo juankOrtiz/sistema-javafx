@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.juan.sistema.controllers.UsuarioGestionController">
+    <top>
+        <MenuBar>
+            <Menu text="File">
+                <MenuItem text="Volver al Dashboard" onAction="#manejarVolverAlDashboard"/>
+            </Menu>
+        </MenuBar>
+    </top>
+    <center>
+        <VBox spacing="10" alignment="center">
+            <TableView fx:id="tablaUsuarios">
+                <columns>
+                    <TableColumn fx:id="columnaUsuarios" text="Usuario"/>
+                    <TableColumn fx:id="columnaPassword" text="Contraseña"/>
+                    <TableColumn fx:id="columnaEmail" text="Email"/>
+                </columns>
+            </TableView>
+            <Button text="Crear" onAction="#manejarCrear"/>
+            <Button text="Actualizar" onAction="#manejarActualizar"/>
+            <Button text="Eliminar" onAction="#manejarEliminar"/>
+            <Button text="Volver al Dashboard" onAction="#manejarVolverAlDashboard" fx:id="btnVolverAlDashboard"/>
+        </VBox>
+    </center>
+</BorderPane>

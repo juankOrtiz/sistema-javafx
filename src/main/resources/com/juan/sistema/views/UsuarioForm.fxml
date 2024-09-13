@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.juan.sistema.controllers.UsuarioFormController">
+    <center>
+        <GridPane hgap="10" vgap="10" alignment="center">
+            <Label text="Usuario:"/>
+            <TextField fx:id="tfUsuario" GridPane.columnIndex="1"/>
+            <Label text="Contraseña:" GridPane.rowIndex="1"/>
+            <PasswordField fx:id="tfPassword" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+            <Label text="Email:" GridPane.rowIndex="2"/>
+            <TextField fx:id="tfEmail" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+            <Button text="Guardar" onAction="#manejarGuardar" GridPane.rowIndex="3" GridPane.columnSpan="2"/>
+            <Button text="Cancelar" onAction="#manejarCancelar" GridPane.rowIndex="4" GridPane.columnSpan="2"/>
+        </GridPane>
+    </center>
+</BorderPane>

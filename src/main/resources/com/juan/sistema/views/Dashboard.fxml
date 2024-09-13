@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.juan.sistema.controllers.DashboardController">
+    <top>
+        <MenuBar>
+            <Menu text="Archivo">
+                <MenuItem text="Salir" onAction="#manejarCierre"/>
+            </Menu>
+        </MenuBar>
+    </top>
+    <center>
+        <VBox spacing="10" alignment="center">
+            <Label fx:id="labelBienvenida" text="Bienvenido" style="-fx-font-size: 18px;"/>
+            <Button fx:id="botonProductos" text="Productos" onAction="#manejarProductos"/>
+            <Button fx:id="botonUsuarios" text="Usuarios" onAction="#manejarUsuarios"/>
+        </VBox>
+    </center>
+</BorderPane>
+
+
