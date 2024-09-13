@@ -50,7 +50,7 @@ public class UsuarioGestionController {
         try (
                 Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/programacion3", "root", "");
                 PreparedStatement pstm = conn.prepareStatement("SELECT * FROM usuarios")
-                ) {
+        ) {
             ResultSet rs = pstm.executeQuery();
             while(rs.next()) {
                 listaUsuarios.add(new Usuario(rs.getString("nombre"), rs.getString("password"), rs.getString("email")));
@@ -60,17 +60,20 @@ public class UsuarioGestionController {
         }
     }
 
-    public void manejarVolverAlDashboard(ActionEvent actionEvent) {
+    public void manejarVolverAlDashboard() {
         Stage stage = (Stage) btnVolverAlDashboard.getScene().getWindow();
         GestionEscena.cargar(stage, "/com/juan/sistema/views/Dashboard.fxml", "Mi sistema");
     }
 
-    public void manejarCrear(ActionEvent actionEvent) {
+    public void manejarCrear() {
         abrirFormUsuario(null);
     }
 
-    public void manejarActualizar(ActionEvent actionEvent) {
-
+    public void manejarActualizar() {
+        Usuario usuarioSeleccionado = tablaUsuarios.getSelectionModel().getSelectedItem();
+        if(usuarioSeleccionado != null) {
+            abrirFormUsuario(usuarioSeleccionado);
+        }
     }
 
     private void abrirFormUsuario(Usuario usuario) {
@@ -92,7 +95,7 @@ public class UsuarioGestionController {
         }
     }
 
-    public void manejarEliminar(ActionEvent actionEvent) {
+    public void manejarEliminar() {
         Usuario usuarioSeleccionado = tablaUsuarios.getSelectionModel().getSelectedItem();
 
         if(usuarioSeleccionado == null) {

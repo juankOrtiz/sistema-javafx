@@ -26,7 +26,7 @@ public class LoginController {
     private Button btnLogin;
 
     @FXML
-    public void manejarLogin(ActionEvent actionEvent) {
+    public void manejarLogin() {
         String usuario = tfUsuario.getText();
         String password = tfPassword.getText();
 
@@ -43,12 +43,11 @@ public class LoginController {
     }
 
     private boolean autenticar(String usuario, String password) {
-        return true;
         // Conectarnos a la BD
-        /*try (
+        try (
                 Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/programacion3", "root", "");
                 PreparedStatement pstm = conn.prepareStatement("SELECT * FROM usuarios WHERE nombre = ?")
-                ) {
+        ) {
             pstm.setString(1, usuario);
             ResultSet rs = pstm.executeQuery();
 
@@ -73,7 +72,7 @@ public class LoginController {
         } catch(SQLException e) {
             e.printStackTrace();
         }
-        return false;*/
+        return false;
     }
 
     private void mostrarError(String mensaje) {
